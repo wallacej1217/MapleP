@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
 }
+
+
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -148,6 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+
 }
 
 abbr[title],
@@ -704,8 +707,8 @@ pre code {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 14px;
+  padding-left: 14px;
 }
 
 .col {
@@ -8402,4 +8405,8 @@ h3 {
 }
 p{
   font-size: 130%;
+}
+
+.rw {
+  margin-left: 4rem;
 }
