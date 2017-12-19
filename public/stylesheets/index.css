@@ -130,6 +130,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+
 }
 
 [tabindex="-1"]:focus {
@@ -150,6 +151,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  margin-left: 2rem;
 
 }
 
@@ -540,6 +542,7 @@ mark,
 
 .blockquote {
   margin-bottom: 1rem;
+  margin-left: 5rem;
   font-size: 1.25rem;
 }
 
@@ -4144,6 +4147,7 @@ tbody.collapse.show {
   bottom: 0;
   left: 0;
   padding: 1.25rem;
+  margin-left: -4rem;
 }
 
 .card-img {
@@ -8417,4 +8421,16 @@ ul {
 
 .mail {
   margin-top: auto;
+}
+
+.add {
+  margin-left: 5rem;
+}
+
+#rot {
+  -webkit-transform: rotate(90deg);
+   -moz-transform: rotate(90deg);
+   -o-transform: rotate(90deg);
+   -ms-transform: rotate(90deg);
+   transform: rotate(90deg);
 }
