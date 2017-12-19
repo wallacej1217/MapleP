@@ -4,6 +4,9 @@ require 'sinatra/activerecord'
 require './models'
 require 'mailgun'
 require 'mail'
+
+require 'sendgrid-ruby'
+include SendGrid
 # Database configuration
 set :database, "sqlite3:development.sqlite3"
 
@@ -36,23 +39,38 @@ get '/AboutUs' do
   erb :AboutUs
 end
 
-
-
-
- post "/submit" do
-  @email = params[:mail]
+post "/submit" do
+  @mail = params[:mail]
   @message = params[:user_message]
 
-  # First, instantiate the Mailgun Client with your API key
-  mg_client = Mailgun::Client.new 'your api key'
+  from = Email.new(email: @mail)
+  to = Email.new(email: 'ogidan@abv.bg')
+  subject = 'Sending with SendGrid is Fun'
+  content = Content.new(type: 'text/plain', value: @message)
+  mail = Mail.new(from, subject, to, content)
 
-  # Define your message parameters
-  message_params =  { from: @email,
-                      to:   'admin@associatesofmaple.me',
-                      subject: 'The Ruby SDK is awesome!',
-                      text: @user_message
-                    }
-
-  # Send your message through the client
-  mg_client.send_message 'https://api.mailgun.net/v3/sandbox275a7519749c44b1af047c06143acc83.mailgun.org', message_params
+  sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+  response = sg.client.mail._('send').post(request_body: mail.to_json)
+  puts response.status_code
+  puts response.body
+  puts response.headers
 end
+
+
+#  post "/submit" do
+#   @email = params[:mail]
+#   @message = params[:user_message]
+#
+#   # First, instantiate the Mailgun Client with your API key
+#   mg_client = Mailgun::Client.new 'your api key'
+#
+#   # Define your message parameters
+#   message_params =  { from: @email,
+#                       to:   'admin@associatesofmaple.me',
+#                       subject: 'The Ruby SDK is awesome!',
+#                       text: @user_message
+#                     }
+#
+#   # Send your message through the client
+#   mg_client.send_message 'https://api.mailgun.net/v3/sandbox275a7519749c44b1af047c06143acc83.mailgun.org', message_params
+# end
