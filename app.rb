@@ -43,17 +43,20 @@ post "/submit" do
   @mail = params[:mail]
   @message = params[:user_message]
 
-  from = Email.new(email: @mail)
-  to = Email.new(email: 'ogidan@abv.bg')
-  subject = 'Sending with SendGrid is Fun'
-  content = Content.new(type: 'text/plain', value: @message)
-  mail = Mail.new(from, subject, to, content)
 
+
+  from = SendGrid::Email.new(email: @mail)
+  subject = @message
+  to = SendGrid::Email.new(email: "ogidan@abv.bg")
+  content = SendGrid::Content.new(type: 'text/plain', value: @message)
+
+  mail = SendGrid::Mail.new(from, subject, to, content)
+  #
   sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+  #
+  # p mail
+
   response = sg.client.mail._('send').post(request_body: mail.to_json)
-  puts response.status_code
-  puts response.body
-  puts response.headers
 end
 
 
