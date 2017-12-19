@@ -47,7 +47,7 @@ post "/submit" do
 
   from = SendGrid::Email.new(email: @mail)
   subject = @message
-  to = SendGrid::Email.new(email: "ogidan@abv.bg")
+  to = SendGrid::Email.new(email: "associatesofmaple@comcast.net")
   content = SendGrid::Content.new(type: 'text/plain', value: @message)
 
   mail = SendGrid::Mail.new(from, subject, to, content)
