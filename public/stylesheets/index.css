@@ -8406,6 +8406,7 @@ h3 {
 
 .container  {
   padding-top: 90px;
+
 }
 p{
   font-size: 130%;
@@ -8420,11 +8421,22 @@ ul {
 }
 
 .mail {
-  margin-top: auto;
+  margin-top: -54rem;
+  margin-bottom: 25rem;
+  margin-left: 55rem;
+  width: 30vw;
+  border-radius: 5px;
+  background-color: #e9ecef;
+  font-size: 30px;
 }
 
 .add {
   margin-left: 5rem;
+  width: 30vw;
+  border-radius: 5px;
+  background-color: #e9ecef;
+  color: Black;
+  font-size: 15px;
 }
 
 #rot {
@@ -8433,4 +8445,10 @@ ul {
    -o-transform: rotate(90deg);
    -ms-transform: rotate(90deg);
    transform: rotate(90deg);
+}
+
+.con {
+  width: 30vw;
+  border-radius: 5px;
+  background-color: #e9ecef;
 }
