@@ -8469,3 +8469,13 @@ ul {
   margin-left: auto;
   text-indent: 20px;
 }
+
+.mov {
+margin-left: 45px;
+  float: left;
+}
+
+.mov2 {
+  float: right;
+  
+}
