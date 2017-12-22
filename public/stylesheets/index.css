@@ -1970,6 +1970,7 @@ select.form-control:focus::-ms-value {
 .input-group-lg > .input-group-btn > .form-control-plaintext.btn {
   padding-right: 0;
   padding-left: 0;
+
 }
 
 .form-control-sm, .input-group-sm > .form-control,
@@ -2352,6 +2353,7 @@ fieldset[disabled] a.btn {
   color: #fff;
   background-color: #868e96;
   border-color: #868e96;
+  text-align: center;
 }
 
 .btn-secondary:hover {
@@ -8424,7 +8426,7 @@ ul {
 }
 
 .mail {
-  margin-top: -54rem;
+  margin-top: -53rem;
   margin-bottom: 25rem;
   margin-left: 55rem;
   width: 30vw;
@@ -8435,7 +8437,7 @@ ul {
 
 .add {
   margin-left: 5rem;
-  width: 30vw;
+  width: 40vw;
   border-radius: 5px;
   background-color: #e9ecef;
   color: Black;
