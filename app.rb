@@ -57,4 +57,5 @@ post "/submit" do
   # p mail
 
   response = sg.client.mail._('send').post(request_body: mail.to_json)
+  redirect "/contact"
 end
